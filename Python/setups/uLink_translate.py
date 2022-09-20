@@ -27,12 +27,12 @@ with open(input_file, 'r') as f:
 
 with open(output_file, 'a') as f:
     for idx in range(len(links)):
-        results = "uLink[" + str(idx) + "] = Link("
+        results = "uLINK[" + str(idx + 1) + "] = Link("
         results += "name=" + links[idx]["name"] + ", "
         results += "m=" + str(links[idx]["m"]) + ", "
         results += "sister=" + str(links[idx]["sister"]) + ", "
         results += "child=" + str(links[idx]["child"]) + ", "
-        results += "b=" + links[idx]["b"] + ", "
+        results += "b=np.array(" + links[idx]["b"] + ").T, "
         results += "a=" + links[idx]["a"] + ", "
         results += "q=" + str(links[idx]["q"]) + ")\n"
         f.write(results)
