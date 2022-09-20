@@ -7,11 +7,11 @@ import sys
 sys.path.append('..')
 
 import numpy as np
-from functions import *
-from Link import Link
-from MatlabArray import MatlabArray
+from utils.functions import *
+from utils.Link import Link
+from utils.MatlabList import MatlabList
 
-uLINK = MatlabArray(13)
+uLINK = MatlabList(13)
 
 ToDeg = 180./np.pi
 ToRad = np.pi/180

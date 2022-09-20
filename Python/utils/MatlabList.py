@@ -1,4 +1,4 @@
-class MatlabArray:
+class MatlabList:
     def __init__(self, size = 0):
         self.items = size * [None]
 
@@ -7,13 +7,13 @@ class MatlabArray:
 
     def __getitem__(self, idx):
         if idx == 0:
-            raise ValueError('Received index = 0 for matlab array')
+            raise ValueError('Received index = 0 for matlab list')
 
         return self.items[idx - 1]
 
     def __setitem__(self, idx, item):
         if idx == 0:
-            raise ValueError('Received index = 0 for matlab array')
+            raise ValueError('Received index = 0 for matlab list')
 
         self.items[idx - 1] = item
 

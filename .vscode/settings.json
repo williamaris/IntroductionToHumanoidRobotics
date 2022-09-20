@@ -1,0 +1,30 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "Python/__pycache__": true,
+        "Python/setups/__pycache__": true,
+        "Python/setups/SetupBipedRobot.txt": true,
+        "Python/setups/uLink_translate.py": true,
+        ".gitignore": true,
+        "00README.txt": true,
+        "LICENSE": true,
+        "README.md": true,
+        "Python/utils/__pycache__": true
+    },
+    "hide-files.files": [
+        "Python/__pycache__",
+        "Python/setups/__pycache__",
+        "Python/setups/SetupBipedRobot.txt",
+        "Python/setups/uLink_translate.py",
+        ".gitignore",
+        "00README.txt",
+        "LICENSE",
+        "README.md",
+        "Python/utils/__pycache__"
+    ]
+}
