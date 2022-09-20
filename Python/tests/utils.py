@@ -89,9 +89,3 @@ class MatlabEnv:
             return mat
 
         return "\n".join(raw_data)
-
-
-if __name__ == '__main__':
-    matlab_env = MatlabEnv(dir="../../Matlab")
-    res = matlab_env.run_func("Rroll(0.7)")
-    print(res)
