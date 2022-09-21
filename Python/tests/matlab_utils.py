@@ -30,7 +30,7 @@ class MatlabEnv:
             
             return self.results_db[func]
 
-        res = self.__run_func(func)
+        res = self._run_func(func)
 
         if type(res).__module__ == 'numpy':
             self.results_db[func] = res.tolist()
@@ -48,7 +48,7 @@ class MatlabEnv:
         self.results_db = {}
 
 
-    def __run_func(self, func, raw_output=False):
+    def _run_func(self, func, raw_output=False):
         cmd = 'matlab -batch "cd('
         
         matlab_dir = self.files.get(func.strip().split('(')[0] + '.m')
@@ -89,3 +89,8 @@ class MatlabEnv:
             return mat
 
         return "\n".join(raw_data)
+
+if __name__ == '__main__':
+    matlab = MatlabEnv(dir='../Matlab')
+    res = matlab._run_func("RPY2R([0.1, 0.1, 0.1])", raw_output=True)
+    print(res)

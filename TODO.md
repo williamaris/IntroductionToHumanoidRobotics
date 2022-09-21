@@ -1,16 +1,16 @@
 ## Tasks progression
 | To Do    | To Test  | Done     |
 | :---     | :---     | :---     |
-| AdjointMatrix.m | FindMother.m |  |
-| calcCoM.m | ForwardKinematics.m |  |
-| CalcJacobian.m | MakeBox.m |  |
-| CalcJacobian_rot.m | Rodrigues.m |  |
-| calcL.m | Rpitch.m |  |
-| calcMC.m | RPY2R.m |  |
-| calcP.m | rpy2rot.m |  |
-| calculate_zmp.jpg | Rroll.m |  |
-| calculate_zmp.m | Ryaw.m |  |
-| CalcVWerr.m | SetupBipedRobot.m |  |
+| AdjointMatrix.m | FindMother.m | Rpitch.m |
+| calcCoM.m | ForwardKinematics.m | RPY2R.m |
+| CalcJacobian.m | MakeBox.m | rpy2rot.m |
+| CalcJacobian_rot.m | Rodrigues.m | Rroll.m |
+| calcL.m | SetupBipedRobot.m | Ryaw.m |
+| calcMC.m |  |  |
+| calcP.m |  |  |
+| calculate_zmp.jpg |  |  |
+| calculate_zmp.m |  |  |
+| CalcVWerr.m |  |  |
 | calcZMP.m |  |  |
 | Connect3D.m |  |  |
 | DrawAllJoints.m |  |  |
