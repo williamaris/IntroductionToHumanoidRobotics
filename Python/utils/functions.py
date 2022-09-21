@@ -58,7 +58,7 @@ def Rodrigues(w, dt):
             [-wn[1], wn[0], 0.]
         ])
 
-        R = np.eye(3) + w_wedge * np.sin(th) + w_wedge**(2) * (1. - np.cos(th))
+        R = np.eye(3) + w_wedge * np.sin(th) + np.matmul(w_wedge, w_wedge) * (1. - np.cos(th))
 
     return R 
 
