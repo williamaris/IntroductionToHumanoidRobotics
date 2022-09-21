@@ -1,5 +1,5 @@
 class Link:
-    def __init__(self, name=None, m=None, mother=None, sister=None, child=None, b=None, a=None, q=None, dq=None, v=None, w=None, p=None, R=None, vertex=None, face=None):
+    def __init__(self, name=None, m=None, mother=None, sister=None, child=None, b=None, a=None, q=None, dq=None, v=None, w=None, p=None, R=None, vertex=None, face=None, c=None, I=None):
         self.name = name
         self.m = m
         self.mother = mother
@@ -19,4 +19,7 @@ class Link:
 
         self.vertex = vertex
         self.face = face
+
+        self.c = c
+        self.I = I
         

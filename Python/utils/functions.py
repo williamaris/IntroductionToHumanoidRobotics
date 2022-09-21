@@ -151,3 +151,69 @@ def Ryaw(psi):
         [0., 0., 1.]])
 
     return R
+
+
+def rot2omega(R):
+    el = np.array([[R[2, 1] - R[1, 2]], [R[0, 2] - R[2, 0]], [R[1, 0] - R[0, 1]]])
+    norm_el = np.linalg.norm(el)
+
+    if norm_el > np.spacing(1.):
+        w = np.atan2(norm_el, np.trace(R) - 1.) / norm_el * el
+
+    elif R[0, 0] > 0. and R[1, 1] > 0. and R[2, 2] > 0.:
+        w = np.array([0., 0., 0.]).T
+
+    else:
+        w = np.pi / 2. * np.array([[R[0, 0] + 1.], [R[1, 1] + 1.], [R[2, 2] + 1.]])
+
+    return w
+
+
+def TotalMass(j, uLINK):
+    if j == 0:
+        m = 0
+
+    else:
+        m = uLINK[j].m + TotalMass(uLINK[j].sister, uLINK) + TotalMass(uLINK[j].child, uLINK)
+
+    return m
+
+
+def MoveJoints(idx, dq, uLINK):
+    
+    for n in range(len(idx)):
+        j = idx[n]
+        uLINK[j].q = uLINK[j].q + dq[n]
+
+
+def calcP(j, uLINK):
+    if j == 0:
+        P = np.array([0., 0., 0.]).T
+
+    else:
+        c1 = uLINK[j].R * uLINK[j].c
+        P = uLINK[j].m * (uLINK[j].v + np.cross(uLINK[j].w, c1))
+        P = P + calcP(uLINK[j].sister, uLINK) + calcP(uLINK[j].child, uLINK)
+
+    return P
+
+
+def calcMC(j, uLINK):
+
+    if j == 0:
+        mc = 0
+
+    else:
+        mc = uLINK[j].m * (uLINK[j].p + uLINK[j].R * uLINK[j].c)
+        mc = mc + calcMC(uLINK[j].sister, uLINK) + calcMC(uLINK[j].child, uLINK)
+
+    return mc
+
+
+def calcCoM(uLINK):
+
+    M = TotalMass(1, uLINK)
+    MC = calcMC(1, uLINK)
+    com = MC / M
+
+    return com

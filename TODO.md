@@ -1,19 +1,16 @@
 ## Tasks progression
 | To Do    | To Test  | Done     |
 | :---     | :---     | :---     |
-| AdjointMatrix.m | FindMother.m | Rodrigues.m |
-| calcCoM.m | ForwardKinematics.m | Rpitch.m |
-| CalcJacobian.m | MakeBox.m | RPY2R.m |
-| CalcJacobian_rot.m | SetupBipedRobot.m | rpy2rot.m |
-| calcL.m |  | Rroll.m |
-| calcMC.m |  | Ryaw.m |
-| calcP.m |  |  |
-| calculate_zmp.jpg |  |  |
-| calculate_zmp.m |  |  |
-| CalcVWerr.m |  |  |
-| calcZMP.m |  |  |
-| Connect3D.m |  |  |
-| DrawAllJoints.m |  |  |
+| AdjointMatrix.m | calcCoM.m | Rodrigues.m |
+| CalcJacobian.m | calcMC.m | Rpitch.m |
+| CalcJacobian_rot.m | calcP.m | RPY2R.m |
+| calcL.m | FindMother.m | rpy2rot.m |
+| calculate_zmp.jpg | ForwardKinematics.m | Rroll.m |
+| calculate_zmp.m | MakeBox.m | Ryaw.m |
+| CalcVWerr.m | MoveJoints.m |  |
+| calcZMP.m | rot2omega.m |  |
+| Connect3D.m | SetupBipedRobot.m |  |
+| DrawAllJoints.m | TotalMass.m |  |
 | DrawCylinder.m |  |  |
 | DrawMarker.m |  |  |
 | DrawPolygon.m |  |  |
@@ -46,13 +43,11 @@
 | MakeRigidBody.m |  |  |
 | MakeTop.m |  |  |
 | MakeZcylinder.m |  |  |
-| MoveJoints.m |  |  |
 | PauseAndExecute.m |  |  |
 | PrintLinkName.m |  |  |
 | rigidbody_fly.m |  |  |
 | rigidbody_rotate.m |  |  |
 | robot_simulation.m |  |  |
-| rot2omega.m |  |  |
 | screw_motion.m |  |  |
 | SE3dynamics.m |  |  |
 | SE3exp.m |  |  |
@@ -67,5 +62,4 @@
 | TopForce.m |  |  |
 | top_simulation.jpg |  |  |
 | top_simulation.m |  |  |
-| TotalMass.m |  |  |
 | ulink_example.m |  |  |
