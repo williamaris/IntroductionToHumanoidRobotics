@@ -69,8 +69,8 @@ def ForwardKinematics(j, uLINK):
 
     if j != 1:
         mom = uLINK[j].mother
-        uLINK[j].p = uLINK[mom].R * uLINK[j].b + uLINK[mom].p
-        uLINK[j].R = uLINK[mom].R * Rodrigues(uLINK[j].a, uLINK[j].q)
+        uLINK[j].p = np.matmul(uLINK[mom].R, uLINK[j].b) + uLINK[mom].p
+        uLINK[j].R = np.matmul(uLINK[mom].R, Rodrigues(uLINK[j].a, uLINK[j].q))
 
     ForwardKinematics(uLINK[j].sister, uLINK)
     ForwardKinematics(uLINK[j].child, uLINK)
@@ -217,3 +217,48 @@ def calcCoM(uLINK):
     com = MC / M
 
     return com
+
+
+def adjointMatrix(M):
+    n_row = M.shape[0]
+    n_col = M.shape[1]
+    adj_M = np.zeros((n_row, n_col))
+
+    if n_col != n_row:
+        print('ERROR: Matrix must be square\n')
+        return
+
+    for j in range(n_col):
+        Mj = np.delete(M, j, 0)
+        
+        for k in range(n_row):
+            Mjk = np.delete(Mj, k, 1)
+            adj_M[k, j] = (-1.)**(j+k) * np.linalg.det(Mjk)
+
+    return adj_M
+
+
+def CalcJacobian_rot(idx, uLINK):
+    jsize = len(idx)
+    target = uLINK[idx[-1]].p
+    J = np.zeros((3, jsize))
+
+    for n in range(0, jsize):
+        j = idx[n]
+        a = np.matmul(uLINK[j].R, uLINK[j].a)
+        J[:, n] = np.cross(a, target - uLINK[j].p)
+
+    return J
+
+
+def CalcJacobian(idx, uLINK):
+    jsize = len(idx)
+    target = uLINK[idx[-1]].p
+    J = np.zeros((6, jsize))
+
+    for n in range(0, jsize):
+        j = idx[n]
+        a = np.matmul(uLINK[j].R, uLINK[j].a)
+        J[:, n] = np.concatenate((np.cross(a, target - uLINK[j].p), a), axis=0)
+
+    return J

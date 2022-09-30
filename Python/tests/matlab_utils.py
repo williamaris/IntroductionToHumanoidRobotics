@@ -92,5 +92,5 @@ class MatlabEnv:
 
 if __name__ == '__main__':
     matlab = MatlabEnv(dir='../Matlab')
-    res = matlab._run_func("RPY2R([0.1, 0.1, 0.1])", raw_output=True)
+    res = matlab._run_func("AdjointMatrix([1. 2.; 7. 3.])", raw_output=True)
     print(res)
