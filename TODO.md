@@ -1,25 +1,20 @@
 ## Tasks progression
 | To Do    | To Test  | Done     |
 | :---     | :---     | :---     |
-| AdjointMatrix.m | calcCoM.m | Rodrigues.m |
-| CalcJacobian.m | calcMC.m | Rpitch.m |
-| CalcJacobian_rot.m | calcP.m | RPY2R.m |
-| calcL.m | FindMother.m | rpy2rot.m |
-| calculate_zmp.jpg | ForwardKinematics.m | Rroll.m |
-| calculate_zmp.m | MakeBox.m | Ryaw.m |
-| CalcVWerr.m | MoveJoints.m |  |
-| calcZMP.m | rot2omega.m |  |
-| Connect3D.m | SetupBipedRobot.m |  |
-| DrawAllJoints.m | TotalMass.m |  |
-| DrawCylinder.m |  |  |
-| DrawMarker.m |  |  |
-| DrawPolygon.m |  |  |
-| DrawRobot.m |  |  |
-| EulerDynamics.m |  |  |
-| FindChildren.m |  |  |
-| FindRoute.m |  |  |
-| fk_random.m |  |  |
-| ForwardAllKinematics.m |  |  |
+| calculate_zmp.m | calcCoM.m | AdjointMatrix.m |
+| CalcVWerr.m | calcL.m | CalcJacobian.m |
+| calcZMP.m | calcMC.m | CalcJacobian_rot.m |
+| Connect3D.m | calcP.m | calculate_zmp.jpg |
+| DrawAllJoints.m | MakeBox.m | FindMother.m |
+| DrawCylinder.m | MoveJoints.m | ForwardKinematics.m |
+| DrawMarker.m | rot2omega.m | Rodrigues.m |
+| DrawPolygon.m |  | Rpitch.m |
+| DrawRobot.m |  | RPY2R.m |
+| EulerDynamics.m |  | rpy2rot.m |
+| FindChildren.m |  | Rroll.m |
+| FindRoute.m |  | Ryaw.m |
+| fk_random.m |  | SetupBipedRobot.m |
+| ForwardAllKinematics.m |  | TotalMass.m |
 | ForwardDynamics.m |  |  |
 | ForwardVelocity.m |  |  |
 | forward_velocity_ck.m |  |  |

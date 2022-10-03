@@ -262,3 +262,19 @@ def CalcJacobian(idx, uLINK):
         J[:, n] = np.concatenate((np.cross(a, target - uLINK[j].p), a), axis=0)
 
     return J
+
+
+def calcL(j, uLINK):
+    if j == 0:
+        return 0.
+
+    c1 = np.matmul(uLINK[j].R, uLINK[j].c)
+    c = uLINK[j].p + c1
+    P = uLINK[j].m * (uLINK[j].v + np.cross(uLINK[j].w, c1))
+    R = uLINK[j].R
+    I = uLINK[j].I
+    w = uLINK[j].w
+    L = np.cross(c, P) + np.matmul(R, np.matmul(I, np.matmul(R.T, w)))
+    L = L = calcL(uLINK[j].sister, uLINK) + calcL(uLINK[j].child, uLINK)
+
+    return L
